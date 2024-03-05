@@ -23,7 +23,7 @@
                     <form action="insert_admin.php" method="POST">
                         <div class="card-actions justify-end">
                             <button type="submit" name="insert_admin" class="btn btn-primary text-white bg-blue-500 hover:bg-blue-600">
-                                สร้างข้อมูลผู้ใช้งาน 
+                                สร้างข้อมูลผู้ใช้งาน
                             </button>
                             <a href="login.php" class="btn btn-success text-white bg-green-500 hover:bg-green-600">
                                 เข้าสู่ระบบ
@@ -36,36 +36,6 @@
             </div>
         </div>
     </section>
-    <?php include "script.php" ?>
-    <?php
-    if (isset($_GET['status'])) {
-        $status = $_GET['status'];
-    ?>
-        <script>
-            <?php if ($status === 'success') { ?>
-                // SweetAlert2 for success
-                Swal.fire({
-                    icon: 'success',
-                    title: 'สำเร็จ',
-                    text: 'สร้างข้อมูลผู้ใช้เรียบร้อยแล้ว',
-                    timer: 2500,
-                    showConfirmButton: false
-                }).then(() => {
-                    window.location.href = "index.php";
-                });
-            <?php } elseif ($status === 'error') { ?>
-                // SweetAlert2 for error
-                Swal.fire({
-                    icon: 'error',
-                    title: 'ผิดพลาด',
-                    text: 'มีข้อมูลผู้ใช้แล้วเรียบร้อย',
-                    showConfirmButton: true
-                }).then(() => {
-                    window.location.href = "index.php";
-                });
-            <?php } ?>
-        </script>
-    <?php } ?>
 </body>
 
 </html>
